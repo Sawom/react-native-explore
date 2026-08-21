@@ -1,10 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
+import logo from '../assets/logo.png'
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title} >The Number 1</Text>
-      <Text> listing app </Text>
+        <Image source={logo}></Image>
+        <Text style={styles.title} >The Number 1</Text>
+        {/* inline css */}
+        <Text style={{ marginTop: 10, marginBottom: 30 }}> listing app </Text>
+
+        {/* card */}
+        <View style={styles.card}>
+            <Text>Hello, this is a Card</Text>
+        </View>
     </View>
   )
 }
@@ -16,8 +24,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+
     title: {
         fontWeight: 'bold',
-        fotSize: 28
+        fotSize: 38
+    },
+
+    card: {
+        backgroundColor: '#fff',
+        padding: 20,
+        borderRadius: 5,
+        boxShadow: "4px 4px rgba(0,0,0,0.1)"
     }
 })
