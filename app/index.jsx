@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 const Home = () => {
   return (
     <View style={styles.container}>
-        <Image source={logo}></Image>
+        <Image source={logo} style={styles.img} ></Image>
         <Text style={styles.title} >The Number 1</Text>
         {/* inline css */}
         <Text style={{ marginTop: 10, marginBottom: 30 }}> listing app </Text>
@@ -35,5 +35,9 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 5,
         boxShadow: "4px 4px rgba(0,0,0,0.1)"
-    }
+    },
+
+    img: {
+        marginVertical: 20
+    },
 })
