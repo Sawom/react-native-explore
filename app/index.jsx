@@ -1,52 +1,51 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import logo from '../assets/logo.png'
+import { StyleSheet } from 'react-native'
 import { Link } from 'expo-router'
+
+import ThemedView from "../components/ThemedView"
+import ThemedText from "../components/ThemedText"
+import ThemedLogo from "../components/ThemedLogo"
+import Spacer from "../components/Spacer"
 
 const Home = () => {
   return (
-    <View style={styles.container}>
-        <Image source={logo} style={styles.img} ></Image>
-        <Text style={styles.title} >The Number 1</Text>
-        {/* inline css */}
-        <Text style={{ marginTop: 10, marginBottom: 30 }}> listing app </Text>
+    <ThemedView style={styles.container}>
+      <ThemedLogo />
+      <Spacer />
 
-        {/* card */}
-        <View style={styles.card}>
-            <Text>Hello, this is a Card</Text>
-        </View>
-    
-        <Link href="/about" style={styles.link} > About page </Link>
-        <Link href="/contact" style={styles.link}>Contact Page</Link>
-    </View>
+      <ThemedText style={styles.title} title={true}>The Number 1</ThemedText>
+
+      <ThemedText style={{ marginTop: 10, marginBottom: 30 }}>
+        Reading List App
+      </ThemedText>
+
+      <Link href="/about" style={styles.link}>
+        <ThemedText>About Page</ThemedText>
+      </Link>
+
+      <Link href="/contact" style={styles.link}>
+        <ThemedText>Contact Page</ThemedText>
+      </Link>
+    </ThemedView>
   )
 }
+
 export default Home
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-
-    title: {
-        fontWeight: 'bold',
-        fotSize: 38
-    },
-
-    card: {
-        backgroundColor: '#fff',
-        padding: 20,
-        borderRadius: 5,
-        boxShadow: "4px 4px rgba(0,0,0,0.1)"
-    },
-
-    img: {
-        marginVertical: 20
-    },
-
-    link: {
-        marginVertical: 10,
-        borderBottomWidth: 1
-    }
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  img: {
+    marginVertical: 20
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1
+  }
 })

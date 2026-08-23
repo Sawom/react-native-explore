@@ -1,5 +1,5 @@
 import { Stack } from "expo-router"
-import { Colors } from "../constant/Colors.js"
+import { Colors } from "../constants/Colors"
 import { useColorScheme } from "react-native"
 import { StatusBar } from "expo-status-bar"
 
