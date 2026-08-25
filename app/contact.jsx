@@ -1,8 +1,8 @@
 import { Link } from 'expo-router'
 import { StyleSheet } from 'react-native'
 
-import ThemedView from '../components/ThemedView'
-import ThemedText from '../components/ThemedText'
+import ThemedView from '../components/ThemedView.jsx'
+import ThemedText from '../components/ThemedText.jsx'
 
 const Contact = () => {
   return (
