@@ -1,11 +1,17 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import { Link } from 'expo-router'
 
 import ThemedView from "../../components/ThemedView.jsx"
 import ThemedText from "../../components/ThemedText.jsx"
 import Spacer from "../../components/Spacer.jsx"
+import ThemedButton from '../../components/ThemedButton.jsx'
 
 const Login = () => {
+
+  const handleSubmit = async () => {
+    console.log('login form submitted')
+  }
+
   return (
     <ThemedView style={styles.container}>
       
@@ -13,6 +19,10 @@ const Login = () => {
       <ThemedText title={true} style={styles.title}>
         Login to Your Account
       </ThemedText>
+
+      <ThemedButton onPress={handleSubmit}>
+        <Text style={{ color: '#f2f2f2' }}>Login</Text>
+      </ThemedButton>
 
       <Spacer height={100} />
       <Link href="/register" replace>

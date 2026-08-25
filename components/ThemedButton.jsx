@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet } from 'react-native'
-import { Colors } from '../constants/Colors.js'
+import { Colors } from '../constant/Colors.js'
 
 function ThemedButton({ style, ...props }) {
 
