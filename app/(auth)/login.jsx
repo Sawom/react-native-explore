@@ -1,27 +1,25 @@
-import { StyleSheet, Text } from 'react-native'
-import { Link } from 'expo-router'
+import { StyleSheet, Text } from "react-native";
+import { Link } from "expo-router";
 
-import ThemedView from "../../components/ThemedView.jsx"
-import ThemedText from "../../components/ThemedText.jsx"
-import Spacer from "../../components/Spacer.jsx"
-import ThemedButton from '../../components/ThemedButton.jsx'
+import ThemedView from "../../components/ThemedView.jsx";
+import ThemedText from "../../components/ThemedText.jsx";
+import Spacer from "../../components/Spacer.jsx";
+import ThemedButton from "../../components/ThemedButton.jsx";
 
 const Login = () => {
-
   const handleSubmit = async () => {
-    console.log('login form submitted')
-  }
+    console.log("login form submitted");
+  };
 
   return (
     <ThemedView style={styles.container}>
-      
       <Spacer />
       <ThemedText title={true} style={styles.title}>
         Login to Your Account
       </ThemedText>
 
       <ThemedButton onPress={handleSubmit}>
-        <Text style={{ color: '#f2f2f2' }}>Login</Text>
+        <Text style={{ color: "#f2f2f2" }}>Login</Text>
       </ThemedButton>
 
       <Spacer height={100} />
@@ -30,12 +28,11 @@ const Login = () => {
           Register instead
         </ThemedText>
       </Link>
-
     </ThemedView>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
 
 const styles = StyleSheet.create({
   container: {
@@ -45,6 +42,6 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     fontSize: 18,
-    marginBottom: 30
+    marginBottom: 30,
   },
-})
+});

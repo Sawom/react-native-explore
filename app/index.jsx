@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native'
-import { Link } from 'expo-router'
+import { StyleSheet } from "react-native";
+import { Link } from "expo-router";
 
-import ThemedView from "../components/ThemedView.jsx"
-import ThemedText from "../components/ThemedText.jsx"
-import ThemedLogo from "../components/ThemedLogo.jsx"
-import Spacer from "../components/Spacer.jsx"
+import ThemedView from "../components/ThemedView.jsx";
+import ThemedText from "../components/ThemedText.jsx";
+import ThemedLogo from "../components/ThemedLogo.jsx";
+import Spacer from "../components/Spacer.jsx";
 
 const Home = () => {
   return (
@@ -12,7 +12,9 @@ const Home = () => {
       <ThemedLogo />
       <Spacer />
 
-      <ThemedText style={styles.title} title={true}>The Number 1</ThemedText>
+      <ThemedText style={styles.title} title={true}>
+        The Number 1
+      </ThemedText>
 
       <ThemedText style={{ marginTop: 10, marginBottom: 30 }}>
         Reading List App
@@ -33,28 +35,27 @@ const Home = () => {
       <Link href="/register" style={styles.link}>
         <ThemedText>Register</ThemedText>
       </Link>
-
     </ThemedView>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   img: {
-    marginVertical: 20
+    marginVertical: 20,
   },
   title: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 18,
   },
   link: {
     marginVertical: 10,
-    borderBottomWidth: 1
-  }
-})
+    borderBottomWidth: 1,
+  },
+});
