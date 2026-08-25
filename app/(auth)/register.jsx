@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native'
 import { Link } from 'expo-router'
 
-import ThemedView from "../components/ThemedView.jsx"
-import ThemedText from "../components/ThemedText.jsx"
-import Spacer from "../components/Spacer.jsx"
+import ThemedView from "../../components/ThemedView.jsx"
+import ThemedText from "../../components/ThemedText.jsx"
+import Spacer from "../../components/Spacer.jsx"
 
 const Register = () => {
   return (
