@@ -31,7 +31,7 @@ const Register = () => {
 
         <Spacer />
         <ThemedTextInput
-          style={{ marginBottom: 20, width: "80%" }}
+          style={{ marginBottom: 20, width: "80%", alignSelf: "center" }}
           placeholder="Email"
           value={email}
           onChangeText={setEmail}
@@ -39,15 +39,20 @@ const Register = () => {
         />
 
         <ThemedTextInput
-          style={{ marginBottom: 20, width: "80%" }}
+          style={{ marginBottom: 20, width: "80%", alignSelf: "center" }}
           placeholder="Password"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
         />
 
-        <ThemedButton onPress={handleSubmit}>
-          <Text style={{ color: "#f2f2f2" }}>Register</Text>
+        <ThemedButton
+          onPress={handleSubmit}
+          style={{ marginBottom: 20, width: "50%", alignSelf: "center" }}
+        >
+          <Text style={{ color: "#f2f2f2", textAlign: "center" }}>
+            Register
+          </Text>
         </ThemedButton>
 
         <Spacer height={100} />
