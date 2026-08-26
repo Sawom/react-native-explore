@@ -7,3 +7,5 @@ StyleSheet: https://reactnative.dev/docs/stylesheet
 CSS property (full props section) : https://reactnative.dev/docs/layout-props
 <br>
 Styling library (Nativewind): https://www.nativewind.dev/docs
+<br>
+run app: npx expo start

@@ -1,17 +1,26 @@
 import { StyleSheet, ScrollView } from "react-native";
 import { Link } from "expo-router";
+import { useEffect } from "react";
 
 import ThemedView from "../components/ThemedView.jsx";
 import ThemedText from "../components/ThemedText.jsx";
 import ThemedLogo from "../components/ThemedLogo.jsx";
 import Spacer from "../components/Spacer.jsx";
+import client from "../lib/appwrite.js";
 
 const Home = () => {
+  useEffect(() => {
+    client
+      .ping()
+      .then((res) => console.log("Appwrite Connected Successfully!", res))
+      .catch((err) => console.log("Appwrite Connection Failed:", err));
+  }, []);
+
   return (
     <ThemedView style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false} // ডানপাশের স্ক্রোল বার হাইড করতে চাইলে (অপশনাল)
+        showsVerticalScrollIndicator={false} // to hide left right scroll
       >
         <ThemedLogo />
         <Spacer />
