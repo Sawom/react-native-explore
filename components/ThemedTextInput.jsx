@@ -1,5 +1,5 @@
 import { TextInput, useColorScheme } from "react-native";
-import { Colors } from "../constants/Colors.js";
+import { Colors } from "../constant/Colors.js";
 
 export default function ThemedTextInput({ style, ...props }) {
   const colorScheme = useColorScheme();
