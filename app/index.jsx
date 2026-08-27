@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView, Pressable, View } from "react-native";
 import { Link } from "expo-router";
 import { useEffect } from "react";
 
@@ -20,64 +20,144 @@ const Home = () => {
     <ThemedView style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false} // to hide left right scroll
+        showsVerticalScrollIndicator={false}
       >
-        <ThemedLogo />
-        <Spacer />
+        {/* Header Section */}
+        <View style={styles.header}>
+          <ThemedLogo />
+          <Spacer />
 
-        <ThemedText style={styles.title} title={true}>
-          The Number 1
-        </ThemedText>
+          <ThemedText style={styles.title} title={true}>
+            The Number 1
+          </ThemedText>
 
-        <ThemedText style={{ marginTop: 10, marginBottom: 30 }}>
-          Reading List App
-        </ThemedText>
+          <ThemedText style={styles.subtitle}>Reading List App</ThemedText>
+        </View>
 
-        <Link href="/about" style={styles.link}>
-          <ThemedText>About Page</ThemedText>
-        </Link>
+        {/* Navigation Cards */}
+        <View style={styles.menuContainer}>
+          <Link href="/about" asChild>
+            <Pressable
+              style={({ pressed }) => [
+                styles.card,
+                pressed && styles.cardPressed,
+              ]}
+            >
+              <ThemedText style={styles.cardText}>About Page</ThemedText>
+            </Pressable>
+          </Link>
 
-        <Link href="/contact" style={styles.link}>
-          <ThemedText>Contact Page</ThemedText>
-        </Link>
+          <Link href="/contact" asChild>
+            <Pressable
+              style={({ pressed }) => [
+                styles.card,
+                pressed && styles.cardPressed,
+              ]}
+            >
+              <ThemedText style={styles.cardText}>Contact Page</ThemedText>
+            </Pressable>
+          </Link>
 
-        <Link href="/login" style={styles.link}>
-          <ThemedText>Login</ThemedText>
-        </Link>
+          <Link href="/login" asChild>
+            <Pressable
+              style={({ pressed }) => [
+                styles.card,
+                styles.primaryCard,
+                pressed && styles.cardPressed,
+              ]}
+            >
+              <ThemedText style={[styles.cardText, styles.primaryCardText]}>
+                Login
+              </ThemedText>
+            </Pressable>
+          </Link>
 
-        <Link href="/register" style={styles.link}>
-          <ThemedText>Register</ThemedText>
-        </Link>
+          <Link href="/register" asChild>
+            <Pressable
+              style={({ pressed }) => [
+                styles.card,
+                styles.outlineCard,
+                pressed && styles.cardPressed,
+              ]}
+            >
+              <ThemedText style={styles.cardText}>Register</ThemedText>
+            </Pressable>
+          </Link>
 
-        <Link href="/profile" style={styles.link}>
-          <ThemedText> Profile </ThemedText>
-        </Link>
+          <Link href="/profile" asChild>
+            <Pressable
+              style={({ pressed }) => [
+                styles.card,
+                pressed && styles.cardPressed,
+              ]}
+            >
+              <ThemedText style={styles.cardText}>Profile</ThemedText>
+            </Pressable>
+          </Link>
+        </View>
       </ScrollView>
     </ThemedView>
   );
 };
 
-export default Home;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  img: {
-    marginVertical: 20,
   },
   scrollContent: {
+    paddingHorizontal: 24,
+    paddingVertical: 40,
+    alignItems: "center",
+  },
+  header: {
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  subtitle: {
+    marginTop: 6,
+    fontSize: 16,
+    opacity: 0.7,
+    textAlign: "center",
+  },
+  menuContainer: {
+    width: "100%",
+    gap: 12, // প্রতিটি লিঙ্কের মাঝে সমান গ্যাপ
+  },
+  card: {
+    width: "100%",
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderRadius: 14,
+    backgroundColor: "rgba(150, 150, 150, 0.08)", // সাবটল শ্যাডো/কার্ড ফিল
+    borderWidth: 1,
+    borderColor: "rgba(150, 150, 150, 0.15)",
     alignItems: "center",
     justifyContent: "center",
   },
-  title: {
-    fontWeight: "bold",
-    fontSize: 18,
+  cardPressed: {
+    opacity: 0.7,
+    transform: [{ scale: 0.98 }], // টাচ করলে হালকা চেপে যাবে (UI Feedback)
   },
-  link: {
-    marginVertical: 10,
-    textDecorationLine: "none",
+  cardText: {
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  primaryCard: {
+    backgroundColor: "#007AFF", // মেইন অ্যাকশন বাটন হিসেবে Login কে হাইলাইট করা
+    borderColor: "#007AFF",
+  },
+  primaryCardText: {
+    color: "#FFFFFF",
+  },
+  outlineCard: {
+    borderWidth: 1.5,
+    borderColor: "#007AFF",
   },
 });
+
+export default Home;
