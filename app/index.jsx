@@ -24,8 +24,9 @@ const Home = () => {
       >
         {/* Header Section */}
         <View style={styles.header}>
-          <ThemedLogo />
-          <Spacer />
+          <View style={styles.logoContainer}>
+            <ThemedLogo />
+          </View>
 
           <ThemedText style={styles.title} title={true}>
             The Number 1
@@ -34,7 +35,7 @@ const Home = () => {
           <ThemedText style={styles.subtitle}>Reading List App</ThemedText>
         </View>
 
-        {/* Navigation Cards */}
+        {/* Navigation Section */}
         <View style={styles.menuContainer}>
           <Link href="/about" asChild>
             <Pressable
@@ -62,13 +63,10 @@ const Home = () => {
             <Pressable
               style={({ pressed }) => [
                 styles.card,
-                styles.primaryCard,
                 pressed && styles.cardPressed,
               ]}
             >
-              <ThemedText style={[styles.cardText, styles.primaryCardText]}>
-                Login
-              </ThemedText>
+              <ThemedText style={styles.cardText}>Login</ThemedText>
             </Pressable>
           </Link>
 
@@ -76,7 +74,6 @@ const Home = () => {
             <Pressable
               style={({ pressed }) => [
                 styles.card,
-                styles.outlineCard,
                 pressed && styles.cardPressed,
               ]}
             >
@@ -106,57 +103,56 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingHorizontal: 24,
-    paddingVertical: 40,
+    paddingTop: 20,
+    paddingBottom: 40,
     alignItems: "center",
   },
   header: {
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 30,
+    width: "100%",
+  },
+  logoContainer: {
+    width: 100,
+    height: 100,
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+    marginBottom: 10,
   },
   title: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: "bold",
     textAlign: "center",
   },
   subtitle: {
-    marginTop: 6,
-    fontSize: 16,
-    opacity: 0.7,
+    marginTop: 4,
+    fontSize: 15,
+    opacity: 0.6,
     textAlign: "center",
   },
   menuContainer: {
     width: "100%",
-    gap: 12, // প্রতিটি লিঙ্কের মাঝে সমান গ্যাপ
+    gap: 12,
   },
   card: {
     width: "100%",
-    paddingVertical: 16,
+    paddingVertical: 14,
     paddingHorizontal: 20,
-    borderRadius: 14,
-    backgroundColor: "rgba(150, 150, 150, 0.08)", // সাবটল শ্যাডো/কার্ড ফিল
+    borderRadius: 12,
+    backgroundColor: "rgba(0, 0, 0, 0.04)",
     borderWidth: 1,
-    borderColor: "rgba(150, 150, 150, 0.15)",
+    borderColor: "rgba(0, 0, 0, 0.08)",
     alignItems: "center",
     justifyContent: "center",
   },
   cardPressed: {
-    opacity: 0.7,
-    transform: [{ scale: 0.98 }], // টাচ করলে হালকা চেপে যাবে (UI Feedback)
+    opacity: 0.6,
+    transform: [{ scale: 0.98 }],
   },
   cardText: {
     fontSize: 16,
     fontWeight: "600",
-  },
-  primaryCard: {
-    backgroundColor: "#007AFF", // মেইন অ্যাকশন বাটন হিসেবে Login কে হাইলাইট করা
-    borderColor: "#007AFF",
-  },
-  primaryCardText: {
-    color: "#FFFFFF",
-  },
-  outlineCard: {
-    borderWidth: 1.5,
-    borderColor: "#007AFF",
   },
 });
 
