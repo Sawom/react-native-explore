@@ -11,7 +11,8 @@ import ThemedText from "../../components/ThemedText.jsx";
 import Spacer from "../../components/Spacer.jsx";
 import ThemedButton from "../../components/ThemedButton.jsx";
 import ThemedTextInput from "../../components/ThemedTextInput.jsx";
-
+import { useUser } from "../../hooks/useUser.js";
+import { Colors } from "../../constant/Colors.js";
 
 const Login = () => {
   const [email, setEmail] = useState("");
