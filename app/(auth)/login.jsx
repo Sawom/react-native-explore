@@ -71,6 +71,8 @@ const Login = () => {
             Register instead
           </ThemedText>
         </Link>
+
+        {/* <ActivityIndicator size="large" color="white" /> */}
       </ThemedView>
     </TouchableWithoutFeedback>
   );
